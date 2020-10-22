@@ -5,7 +5,7 @@ In this project, we will use Microsoft Azure to demonstrate Machine Learning ope
 - First, using the Azure ML Studio, we will configure a cloud-based machine learning production model, deploy it, and consume the model endpoint via an HTTP API.
 - After that, using the Python SDK, we will create, publish, and consume a pipeline. Also, we will schedule a pipeline run.
 
-## Architectural Diagram
+## Architecture Diagram
 
 ![Architecture](images/architecture.jpeg)
 
