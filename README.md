@@ -10,7 +10,7 @@ In this project, we will use Microsoft Azure to demonstrate Machine Learning ope
 ![Architecture](images/architecture.jpeg)
 
 ## Screen Recording
-[Video link](https://youtu.be/h0QHCFeEj9I)
+[Video link](https://youtu.be/pRCSAkf2lUc)
 
 
 ## Future Improvements
@@ -19,41 +19,47 @@ In this project, we will use Microsoft Azure to demonstrate Machine Learning ope
 
 ## Key Steps
 
-1. Registered Datasets in ML Studio shows "Bankmarketing" dataset available.
-![registered dataset](images/registered_dataset.jpg)
+1. The "Bank-marketing" dataset is registered using an URI. The registered dataset will be used to train the model. The image below shows Registered Datasets tab under the Datasets section in ML Studio, having "Bankmarketing" dataset available, along with other details like data source, Version, Properties(Tabular Dataset).
+![registered_dataset](images/registered_dataset.jpg)
 
-2. AutoML run experiment is shown as completed.
-![experiment complete](images/experiment_complete.jpg)
+2. Using the Registered Dataset, an AutoML run experiment was created and is completed in the experiment section. The step is perfomed to train the model. The image below shows experiment is completed. It also shows the Compute Target and the Run Type.
+![experiment_complete](images/experiment_complete.jpg)
 
-3. Summary of best model after the run the completed
+3. After the AutoML run is completed, we get the best model. The image below shows Summary of best model after the run the completed. The summary shows the AlgorithmName and the Accuracy score. The best model is then deployed with endpoint name "bank-automl-model". During deployment, authentication is enabled for the endpoint.
 ![best_model_summary](images/best_model_summary.jpg)
 
-4. Endpoints section in Azure ML Studio, showing that “Application Insights enabled” says “true”.
-![application_insights_enabled](images/app_insights_enabled.jpg)
-
-5. Logging is enabled by running the provided `logs.py` script
+4. The Applications Insight or Logging is enabled by running the provided `logs.py` script. The image below shows the output of `logs.py` file.
 ![logs_run](images/logs_run.jpg)
 
-6. Swagger runs on localhost showing the HTTP API methods and responses for the model
+5. The image below shows Endpoints section in Azure ML Studio, showing that “Application Insights enabled” says “true”. This step is performed to confirm the Application Insight is enabled for the endpoint.
+![application_insights_enabled](images/app_insights_enabled.jpg)
+
+6. Using the Swagger package and the enpoint's `swagger.json` file, we get the model's documentation. The image below shows Swagger running on localhost, showing the HTTP API methods and responses for the model.
 ![swagger](images/swagger.jpg)
 
-7. `endpoint.py` script runs against the API producing JSON output from the model.
+7. The endpoint is consumed using the `endpoint.py` script. The script has 2 sample input data, it sends a post request to the endpoint, response is the output from the model. The image below shows `endpoint.py` execution against the API, producing JSON output from the model.
 ![endpoint](images/endpoint.jpg)
 
-8. Apache Benchmark (ab) runs against the HTTP API using authentication keys to retrieve performance results.
+8. The endpoint load testing is performed using the Apache benchmark. The image below shows Apache Benchmark (ab) execution against the HTTP API using authentication keys to retrieve performance results.
 ![benchmark](images/benchmark.jpg)
 
-9. The pipeline section of Azure ML studio, showing the pipeline runs.
+9. The pipeline section of Azure ML studio, showing the pipeline runs are completed. The bottom run is when the pipeline is created using AutoML steps, and the top run is after the pipeline is published, the run is executed using the REST endpoint.
 ![pipeline_runs](images/pipeline.jpg)
 
-10. The pipeline section of Azure ML studio, showing the pipeline endpoint as Active.
+10. From pipeline run graph, it is confirmed that the dataset is used as input to the automl module. The image below shows the Bankmarketing dataset with the AutoML module.
+![dataset_with_automl_module](images/dataset_with_automl_module.jpg)
+
+11. The “Published Pipeline overview”, having a REST endpoint and a status of ACTIVE is confirmed.
+![ppo_active](images/ppo_active.jpg)
+
+12. The "Pipeline" section of Azure ML studio, showing the pipeline endpoint as ACTIVE is confirmed.
 ![pipeline_endpoint](images/pipeline_endpoint.jpg)
 
-11. Jupyter Notebook showing the RunDetails with the step runs
+13. Using the Python SDK, the pipeline run details are examined. The image below shows Jupyter Notebook having the RunDetails with the step runs.
 ![RunDetails](images/RunDetails.jpg)
 
-12. Jupyter Notebook showing the best model trained with it's parameters
+14. The image below shows Jupyter Notebook showing the best model trained with it's parameters.
 ![BestModel](images/best_model_trained.jpg)
 
-13. Jupyter Notebook showing the scheduled pipline run
-![scheduled_pipeline-run](images/schedule_pipeline_run.jpg) 
+15. Using the ScheduleRun and Schedule class, a pipeline run is scheduled. The image below shows the Jupyter Notebook with the scheduled pipline run id. 
+![scheduled_pipeline_run](images/schedule_pipeline_run.jpg)
