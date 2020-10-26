@@ -58,7 +58,7 @@ In this project, we will use Microsoft Azure to demonstrate Machine Learning ope
 13. Using the Python SDK, the pipeline run details are examined. The image below shows Jupyter Notebook having the RunDetails with the step runs.
 ![RunDetails](images/RunDetails.jpg)
 
-14. The image below shows Jupyter Notebook showing the best model trained with it's parameters.
+14. The image below shows the Jupyter Notebook with the best model trained and it's parameters.
 ![BestModel](images/best_model_trained.jpg)
 
 15. Using the ScheduleRun and Schedule class, a pipeline run is scheduled. The image below shows the Jupyter Notebook with the scheduled pipline run id. 
